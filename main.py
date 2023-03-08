@@ -71,15 +71,92 @@ print('a = {}, b = {}'.format(12, 14))
 #else:
 #    instrukcja1
 
-a = input('podaj a: ')
-b = input('podaj b: ')
-print(a)
-print(b)
+#a = input('podaj a: ')
+#b = input('podaj b: ')
+#c = input('podaj c: ')
+#d = input('podaj d: ')
+#print(a)
+#print(b)
+#print(c)
+#print(d)
 #print(type(a))
 #print(type(b))
-a = int(a)
-b = int(b)
+#a = int(a)
+#b = int(b)
+#c = int(c)
+#d = int(d)
 #print(type(a))
 #print(type(b))
 
-if a>b:
+#if a>b:
+#    print('a = ' + str(a))
+#elif a<b:
+#    print('b = ' + str(b))
+#else:
+#    print('a równe b')
+
+#if (a > b) & (c > d):
+#    print(a, c)
+#else:
+#    print('a nie wieksze od b lub c nie jest wieksze od d')
+
+#c = input('podaj c: ')
+#d = input('podaj d: ')
+#print(c)
+#print(d)
+#c = int(c)
+#d = int(d)
+#if c==d:
+#    print('liczby sa rowne')
+#else:
+#    print('liczby nie sa rowne')
+
+#for element in sekwencja:
+#    instrukcja 1
+#    instrukcja 2
+#else:
+# instrukcja 1
+
+for x in range(1, 6, 1):
+    print(x)
+print("")
+for x in lista:
+    print(x)
+
+for x in range(5, len(lista)):
+    print(lista[x])
+
+# range(start, stop, step) for(int i=0, i < lista.count(), i++)
+
+#while wrunek:
+    # instrukcja 1
+    # instrukcja 2
+# else:
+#       instrukcja 1
+
+licznik = 0
+while licznik != len(lista):
+    print(lista[licznik])
+    licznik += 1
+
+liczby = [3, 45, 1, 7, 8, 5]
+licznik = 0
+a = int(input('podaj a: '))
+while licznik != len(liczby):
+    if a - liczby[licznik] == 0:
+        print('{} - {} = 0'.format(a, liczby[licznik]))
+        break
+    licznik += 1
+
+
+liczby = [1, 2, 2, 2, 2, 3]
+print(liczby)
+licznik = 0
+while licznik != len(liczby):
+    if liczby[licznik] == 2:
+        liczby.pop(licznik)
+    else:
+        licznik += 1
+print(liczby)
+
+
