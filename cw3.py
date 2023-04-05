@@ -13,8 +13,8 @@ print(zad1c)
 zad1d = math.ceil(4.8)
 print(zad1d)
 #                           ZAD_2
-imie= "SZYMON"
-nazwisko = "SENDER"
+imie= "m"
+nazwisko = "s"
 imiee = imie.capitalize()
 nazwiskoo = nazwisko.capitalize()
 print(imiee, nazwiskoo)
