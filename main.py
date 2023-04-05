@@ -1,162 +1,168 @@
-a = "napis\n"
+a = 'napis\ndrugi napis'
 print(a)
+
 b = 4
-c = 5
+c = 4.5
 print(b, c)
+# Liczby zespolone:
 d = 3+4j
 print(d)
-e = b+c
+
+e = b + c
 print(e)
+
 f = b // c
 print(f)
+
 g = b % c
 print(g)
+
 i = c**2
 print(i)
+
 j = pow(5, 2)
 print(j)
+
 # k = 5**1/2
-# m = pow(5,1/2)
+# print(k)
+# m = pow(5, 1/2)
+# print(m)
 
 print('b = b + 2')
 b += 2
 print(b)
 
-lista = ['a0', 2, 4, 5, [7, 6, 5], 5.5]
-print(lista[4])
-lista.append(6.5)
-print(lista)
+lista = ['a0', 2, 3, 4, 5, [7, 6, 5], 5.5]
+print(lista[5])
 
-lista = [1, 2, 3, 4, 5]
-#dodanie elementu na pozycje
-lista.insert(3, 7)
+# Dodanie do końca:
+lista.append(6.5)
+# Dodawanie elementu na pozycję
+lista.insert(1, 128)
+# Dodawanie kilku elementów na koniec listy
+lista.extend([6.5, 8])
 print(lista)
-#dodanie kilku elementów na koniec listy
-lista.append(9)
-lista.append(6)
-lista.append(7)
-print(lista)
-#usuwanie elementu po indeksie
-lista.pop(1)
-print(lista)
-#usuwanie elementu po wartości elementu
-lista.remove(3)
-print(lista)
-#odwrócenie listy
+# Usuwanie elementu po indeksie, pop() - bez podanej wartości usunie ostatni element z listy
+lista.pop(0)
+# usuwanie elementu po wartości elementu
+lista.remove(5.5)
+# Odwórcenie listy
 lista.reverse()
-print(lista)
-#sortowanie
-lista.sort()
-print(lista)
+# sortowanie
+# lista.sort()
+# del - usuwanie całej listy
 
 slownik = {'a': 1, 3: 1, 5: 'b', 'a': 5}
 print(slownik)
 print(slownik['a'])
+
 slownik['klucz'] = 'wartość'
 print(slownik)
+
 slownik.pop('a')
 print(slownik)
+
 print(slownik.keys())
 print(slownik.values())
 
-print('a = %(zm)d' % {'zm': 12})
+# Formatowanie łańcuchów znakowych
+print('a = %(zm)d' %{'zm': 12})
 print('a = {}, b = {}'.format(12, 14))
 
-#if warunek:
-#    instrukcja 1
-#    instrukcja 2
-#elif warunek2:
-#    instrukcja1
-#    instrukcja2
-#else:
-#    instrukcja1
+# Funkcje warunkowe:
+# if warunek:
+#   instrukcja 1
+#   instrukcja 2
+# elif warunek2
+#   instrukcja 1
+#   instrukcja 2
+# else:
+#   instrukcja 1
 
-#a = input('podaj a: ')
-#b = input('podaj b: ')
-#c = input('podaj c: ')
-#d = input('podaj d: ')
-#print(a)
-#print(b)
-#print(c)
-#print(d)
-#print(type(a))
-#print(type(b))
-#a = int(a)
-#b = int(b)
-#c = int(c)
-#d = int(d)
+# a = input('Podaj a: ')
+# b = input('Podaj b: ')
+# print(a)
+# print(b)
 #print(type(a))
 #print(type(b))
 
-#if a>b:
-#    print('a = ' + str(a))
-#elif a<b:
-#    print('b = ' + str(b))
-#else:
-#    print('a równe b')
 
-#if (a > b) & (c > d):
-#    print(a, c)
-#else:
-#    print('a nie wieksze od b lub c nie jest wieksze od d')
+# a = int(a)
+# b = int(b)
+# print(type(a))
+# print(type(b))
+#
+# if a > b:
+#     print('a = ' + str(a))
+# elif a < b:
+#     print('b = ' + str(b))
+# else:
+#     print('a równe b')
 
-#c = input('podaj c: ')
-#d = input('podaj d: ')
-#print(c)
-#print(d)
-#c = int(c)
-#d = int(d)
-#if c==d:
-#    print('liczby sa rowne')
-#else:
-#    print('liczby nie sa rowne')
 
-#for element in sekwencja:
-#    instrukcja 1
-#    instrukcja 2
-#else:
-# instrukcja 1
+# x = input('Podaj x: ')
+# y = input('Podaj y: ')
+#
+# if a == b:
+#     print('Są takie same')
+# else:
+#     print("Są różne od siebie")
 
+# a = input('Podaj a: ')
+# b = input('Podaj b: ')
+# x = input('Podaj x: ')
+# y = input('Podaj y: ')
+
+# if (a > b) & (x > y):
+#     print(a, x)
+# else:
+#     print('a nie jest większe b lub x nie jest większy od y')
+
+#                                           Pętle for
+# for element in sekwencja:
+#   instrukcja 1
+#   instrukcja 2
+# else: (opcjonalnie)
+#   instrukcja 1
+
+#        range(start, stop, co ile)
 for x in range(1, 6, 1):
     print(x)
-print("")
 for x in lista:
     print(x)
+print("")
 
-for x in range(5, len(lista)):
+for x in range(0, len(lista)):
     print(lista[x])
-
-# range(start, stop, step) for(int i=0, i < lista.count(), i++)
-
-#while wrunek:
-    # instrukcja 1
-    # instrukcja 2
+#                                           Pętla while
+# while warunek:
+#   instrukcja 1
+#   instrukcja 2
 # else:
-#       instrukcja 1
+#   instrukcja 1
 
-licznik = 0
-while licznik != len(lista):
-    print(lista[licznik])
-    licznik += 1
+# liczba = 0
+# while liczba != len(lista):
+#     print(lista[liczba])
+#     liczba += 1
 
-liczby = [3, 45, 1, 7, 8, 5]
-licznik = 0
-a = int(input('podaj a: '))
-while licznik != len(liczby):
-    if a - liczby[licznik] == 0:
-        print('{} - {} = 0'.format(a, liczby[licznik]))
-        break
-    licznik += 1
 
+# liczby = [3, 45, 12, 23, 32, 54]
+# licznik = 0
+# a = int(input("podaj a: "))
+# while licznik != len(liczby):
+#     if a - liczby[licznik] == 0:
+#         print('{} - {} = 0'.format(a, liczby[licznik]))
+#         break
+#     licznik += 1
 
 liczby = [1, 2, 2, 2, 2, 3]
-print(liczby)
 licznik = 0
+
 while licznik != len(liczby):
     if liczby[licznik] == 2:
         liczby.pop(licznik)
     else:
         licznik += 1
+
 print(liczby)
-
-
