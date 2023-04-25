@@ -225,3 +225,5 @@ def array(arr, direction):
     arr = np.arange(1, 26)
     arr = arr.reshape((5, 5))
     print(arr)
+ 
+ a
