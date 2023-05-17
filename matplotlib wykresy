@@ -327,3 +327,10 @@ from PIL import Image
 # plt.legend(loc='lower right')
 # plt.ylabel('procentowy wynik wartosci zamowienia')
 # plt.show()
+
+
+1. funkcja/przedzial na x/ukladanie elementow/ przedzialy z jakiej strony
+2. siatka z pliku/wektor z x/y legenda/
+3. macierz i wyciaganie elementow
+4 i 5 wykresy na danych / slupkowy kolowy / punktowy liniowy / otwarcie wczytywanie pliku
+etykiety limity na osiach
