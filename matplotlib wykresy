@@ -145,3 +145,12 @@ y2 = np.cos(2 * np.pi * x2)
 # grupa.plot(kind='pie', subplots='True', autopct='%.2f%%',
 # fontsize=20, colors=['red','green'])
 # plt.show()
+
+ts = pd.Series(np.random.randn(1000))
+ts = ts.cumsum()
+df = pd.DataFrame(ts, columns=['wartosci'])
+print(df)
+df['Srednia kroczaca'] = df.rolling(window=50).mean()
+df.plot()
+plt.legend()
+plt.show()
