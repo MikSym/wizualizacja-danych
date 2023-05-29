@@ -1,0 +1,86 @@
+#ZAD1
+import math
+
+expression = math.sqrt(math.log(20) + math.cos(45)+math.exp, 1/3)
+rounded_result = round(expression, 2)
+
+print(rounded_result)
+#ZAD2
+# Utworzenie listy z liczbami
+liczby = [5, 10, 3, 8, 2, 7]
+
+# Utworzenie nowej listy bez minimalnej liczby
+nowa_lista = [x for x in liczby if x != min(liczby)]
+
+# Wyświetlenie obu list
+print("Pierwsza lista: ", liczby)
+print("Nowa lista: ", nowa_lista)
+#ZAD3
+def filtruj_zmiennoprzecinkowe(słownik):
+    zmiennoprzecinkowe = []
+    for klucz, wartość in słownik.items():
+        if isinstance(klucz, float) and isinstance(wartość, float):
+            zmiennoprzecinkowe.append((klucz, wartość))
+    return zmiennoprzecinkowe
+#ZAD4
+with open('tekst.txt', 'r', encoding='utf-8') as plik:
+    znaki = plik.read()
+    fragment = znaki[17:58]
+    ilosc_c = znaki.count('c')
+    plik.close()
+    print("Wczytany fragment: ", fragment)
+    print("Ilość wystąpień litery 'c': ", ilosc_c)
+#ZAD5
+try:
+    a1 = int(input("Podaj pierwszy wyraz ciągu: "))
+    n = int(input("Podaj numer wyrazu do obliczenia: "))
+    q = int(input("Podaj iloraz ciągu: "))
+except ValueError:
+    print("Podano niepoprawne wartości")
+else:
+    an = a1 * q ** (n - 1)
+    with open("wynik.txt", "w") as f:
+        f.write(str(an))
+    plik.close()
+    
+    
+    
+    ####
+    
+    import math
+
+#zad 1
+wynik=math.pow(math.log(20)+ math.cos(45)+math.e,1/3)
+print(wynik)
+#zad 2
+A=[x for x in range(1,10)]
+print(A)
+B=[]
+# for x in A:
+#     if (A[x] != min(A)):
+#         B.append(A[x])
+print(B)
+# zad 3
+# def zad3(dict={"1.3":"2.3"}):
+#     e={"1.45":"3.5"}
+#     dict.extend(e)
+#     return dict
+#     for x in dict:
+#         if()
+# k={"5.4":"3.2"}
+# print(k)
+#
+# print(zad3(k))
+
+#zad4
+plik=open("tekst.txt","r")
+# plik=plik.decode("utf-8")
+plik.read(16)
+zmienna=plik.read(41)
+print(zmienna)
+#zad 5
+a1=input("a1:")
+n=input("n:")
+q=input("q:")
+wyraz=(int(a1)*math.pow(int(q),int(n)-1))
+print(str(wyraz))
