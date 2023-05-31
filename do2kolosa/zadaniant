@@ -1,0 +1,61 @@
+#liniowy 37 cosx/x2
+import numpy as np
+import matplotlib.pyplot as plt
+# Przygotowanie danych
+x = np.arange(3, 7.25, 0.25)
+y = np.cos(x) / (x ** 2)
+# Tworzenie wykresu
+plt.plot(x, y, label='f(x) = cos(x)/x^2')
+plt.scatter(x, y, color='red', label='Punkty na wykresie')
+# Dodawanie etykiet
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('Wykres funkcji f(x) = cos(x)/x^2')
+# Ustawienie zakresu osi x
+plt.xlim(3, 7)
+# Dodawanie legendy
+plt.legend()
+# Wyświetlanie wykresu
+plt.show()
+
+#ramki
+import pandas as pd
+import random
+import matplotlib.pyplot as plt
+# Wczytanie danych do ramki danych
+df = pd.read_csv('wine.data', header=None)
+# Utworzenie nowej ramki danych ze stu losowych wierszy
+random_df = df.sample(n=100, replace=True)
+# Grupowanie danych po kolumnie 'class'
+grouped = random_df.groupby(0).size()
+# Wygenerowanie wykresu kołowego z udziałem procentowym klas
+plt.pie(grouped, labels=grouped.index, autopct='%1.1f%%')
+# Ustawienie tytułu wykresu
+plt.title('Udział klas')
+# Wyświetlenie wykresu
+plt.show()
+
+
+#kolumny seaborn srednie wartosci dla klasy etykiety itp
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Wczytanie danych do ramki danych
+df = pd.read_csv('wine.data', header=None)
+# Ustalenie nazw kolumn
+df.columns = ['Class', 'Alcohol']
+# Przetwarzanie danych
+df['Class'] = df['Class'].map({1: 'Class 1', 2: 'Class 2', 3: 'Class 3'})
+# Grupowanie danych i obliczanie średnich wartości alkoholu dla każdej klasy
+mean_alcohol = df.groupby('Class')['Alcohol'].mean().reset_index()
+# Ustawienie stylu wykresu na podstawowy
+sns.set(style="whitegrid")
+# Tworzenie wykresu kolumnowego
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Class', y='Alcohol', data=mean_alcohol)
+# Dodawanie etykiet
+plt.xlabel('Klasa')
+plt.ylabel('Średnia wartość alkoholu')
+plt.title('Średnie wartości alkoholu dla każdej klasy')
+# Wyświetlanie wykresu
+plt.show()
