@@ -93,3 +93,121 @@ print(macierz_2x6)
 print(macierz_3x4.flatten())
 print(macierz_4x3.flatten())
 print(macierz_2x6.flatten())
+
+
+INNE WARIANTY
+# #Utwórz dwie macierze 1x3 różnych wartości a następnie wykonaj operację mnożenia.
+# print("============= Zad 1 =================")
+# a = np.array([2,1,3])
+# b = np.array([1,1,2])
+# c = a * b
+# print(c)
+#
+# #Utwórz macierz 3x3 oraz 4x4 i znajdź najniższe wartości dla każdej kolumny i każdego rzędu.
+# print("============= Zad 2 =================")
+# a1 = np.array([[1,2,3],
+#                [8,7,5]])
+# b1 = np.arange(16).reshape((4,4)) #[0  1  2  3]
+#                                   #[4  5  6  7]
+#                                   #[8  9  10 11]
+#                                   #[12 13 14 15]
+#
+# print(a1.min(axis=1))
+# print(a1.min(axis=0))
+# print(b1.min(axis=1))
+# print(b1.min(axis=0))
+#
+# #Wykorzystaj macierze z zadania pierwszego i wykonaj iloczyn macierzy
+# print("============= Zad 3 =================")
+# f = np.dot(a,b)
+# print(f)
+#
+# #Utwórz dwie macierze 1x3 gdzie pierwsza z nich będzie zawierała liczby całkowite, a druga
+# #liczby rzeczywiste. Następnie wykonaj na nich operację mnożenia.
+# print("============= Zad 4 =================")
+# c = np.arange(3, dtype='int32') #[0 1 2]
+# d = np.linspace(0,np.pi,3)      #[0. 1.57079633 3.14159265] zmiennoprzecinkowe
+# print(c*d)
+#
+# #Utwórz macierz 2x3 różnych wartości a następnie wylicz sinus dla każdej z jej wartości i
+# #zapisz do zmiennej “f”.
+# print("============= Zad 5 =================")
+# e = np.array([[1,2,3],[0,7,5]])
+# # iterujemy jak by to była macierz płaska
+# for x in e.flat:
+#     f = math.sin(x)
+#     print(f)
+#     g = np.ar
+#
+# #lub
+#
+# matrix = np.array([[1, 2, 3], [0,7,5]])
+# sin_matrix = np.sin(matrix)
+# e = sin_matrix
+# print(e)
+
+#
+# #Utwórz nową macierz 2x3 różnych wartości a następnie wylicz cosinus dla każdej z jej
+# #wartości i zapisz do zmiennej “h”.
+# print("============= Zad 6 =================")
+# g = np.array([[1,2,3],[0,7,5]])
+# # iterujemy jak by to była macierz płaska
+# for x in g.flat:
+#     h = math.cos(x)
+#     print(h)
+#
+# #lub
+#
+# matrix = np.array([[1, 2, 3], [0,7,5]])
+# cos_matrix = np.cos(matrix)
+# g = cos_matrix
+# print(g)
+#
+# #Wykonaj funkcję dodawania obu macierzy zapisanych wcześniej do zmiennych e i g.
+# print("============= Zad 7 =================")
+# print(e+g)
+#
+# #Wygeneruj macierz 3x3 i wyświetl w pętli każdy z rzędów.
+# print("============= Zad 8 =================")
+# a2 = np.array([[1,2,3],[0,7,5],[0,7,5]])
+# for x in a2:
+#  #iterujemy wzdłuż pierwszej osi
+#  print(x)
+#
+# #Wygeneruj macierz 3x3 i wyświetl w pętli każdy element korzystając z opcji “spłaszczenia”
+# #macierzy. (użyj funkcji flat())
+# print("============= Zad 9 =================")
+# a3 = np.arange(9).reshape((3,3))
+# for x in a3.flat:
+#     a4 = x
+#     print(a4)
+#
+# #Wygeneruj macierz 9x9 a następnie zmień jej kształt. Jakie mamy możliwości i dlaczego?
+# print("============= Zad 10 =================")
+# i = np.arange(81).reshape((9,9))
+# i2 = np.arange(81).reshape((1,81))
+# i3 = np.arange(81).reshape((81,1))
+# i4 = np.arange(81).reshape((3,27))
+# i5 = np.arange(81).reshape((27,3))
+#
+# #Wygeneruj macierz płaską (wektor) i przekształć ją na macierz 3x4. Wygeneruj w ten sposób
+# #jeszcze kombinacje 4x3 i 2x6. Spłaszcz każdą z nich i wyświetl wyniki. Czy są identyczne?
+# print("============= Zad 11 =================")
+# j = np.arange(12).reshape(3,4)
+# k = np.arange(12).reshape(4,3)
+# l = np.arange(12).reshape(2,6)
+#
+#
+# j2 = np.ravel(j)
+# print(j2)
+#
+# k2 = np.ravel(k)
+# print(k2)
+#
+# for x in j.flat:
+#     a4 = x
+#     print(a4)
+#
+# for x in k.flat:
+#     a5 = x
+#     print(a5)
