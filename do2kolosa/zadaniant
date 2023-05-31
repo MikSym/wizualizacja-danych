@@ -23,7 +23,7 @@ import pandas as pd
 import random
 import matplotlib.pyplot as plt
 # Wczytanie danych do ramki danych
-df = pd.read_csv('wine.data', header=None)
+df = pd.read_csv('x.data', header=None)
 # Utworzenie nowej ramki danych ze stu losowych wierszy
 random_df = df.sample(n=100, replace=True)
 # Grupowanie danych po kolumnie 'class'
@@ -41,7 +41,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 # Wczytanie danych do ramki danych
-df = pd.read_csv('wine.data', header=None)
+df = pd.read_csv('x.data', header=None)
 # Ustalenie nazw kolumn
 df.columns = ['Class', 'Alcohol']
 # Przetwarzanie danych
