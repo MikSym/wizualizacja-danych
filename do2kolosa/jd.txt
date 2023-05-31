@@ -1,0 +1,22 @@
+# labels = ['Przykład 1', 'Przykład 2', 'Przykład 3']
+# values = [30, 40, 50]
+#
+# plt.pie(values, labels=labels)
+# plt.title('Wykres kołowy')
+# plt.show()
+
+#Generowanie losowych danych
+labels = ['A', 'B', 'C', 'D', 'E']
+sizes = [random.randint(1, 100) for _ in range(len(labels))]
+colors = ['red', 'blue', 'green', 'yellow', 'orange']
+explode = [0.1, 0, 0, 0, 0]  # Wycięcie pierwszego kawałka
+
+#Tworzenie wykresu kołowego
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+plt.axis('equal')  # Ustawienie równych proporcji osi X i Y
+
+#Dodawanie tytułu
+plt.title('Wykres kołowy z losowymi danymi')
+
+#Wyświetlanie wykresu
+plt.show()
