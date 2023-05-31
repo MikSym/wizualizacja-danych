@@ -1,0 +1,988 @@
+
+# import numpy as np
+# # #inicjalizacja tablicy
+# # a = np.array([0, 1],  [2, 3])
+# # print(a)
+# # #drugi sposób
+# # a = np.arange(2, 5, 0.1)
+# # print(a)
+# # #przypisanie typu zmiennej tablicy (nie jej elementów)
+# # print(type(a))
+# # #sprawdzanie typu danych tablic
+# # print(a.dtype)
+# # #inicjalizacja tablicy z konkretnym typem danych
+# # a = np.arange(2, dtype='int64')
+# # print(a.dtype)
+# # #zapisywanie kopii tablicy jako tablicy z innym typem danych
+# # b = a.astype('float')
+# # print(b)
+# # print(b.dtype)
+# # #wypisanie rozmiaru tablicy
+# # print(b.shape)
+# # #można też sprawdzić ilośc wymiarów tablicy
+# # print(a.ndim)
+# # #stworzenie tablicy wielowymiarowej może wyglądać tak
+# # #parametrem przekazywanym do funkcji array jest obiekt, który
+# # #może to być Pythonowa lista
+# # m = np.array([np.arange(2), np.arange(2)])
+# # print(m.shape)
+# # #ponownie typem jest ndarray
+# # print(type(m))
+# #
+# # zera = np.zeros((3, 3), dtype='int')
+# # jedynki = np.ones((4, 4))
+# # print(zera)
+# # print(jedynki)
+# # #warto sprawdzić jaki jet domyślny typ danych takich tablic
+# # print(zera.dtype)
+# # print(jedynki.dtype)
+# # #można również stworzyć "pustą" macierz o podanych wymiarach
+# # #wartości umieszczane są losowe, najpierw podawana jest
+# # pusta = np.empty((2, 2))
+# # print(pusta)
+# #
+# # macierz = np.array([[12, 11], [2, 1]])
+# # print(macierz)
+# # #do elementów tablicy możemy odwołać się tak jak do elementów
+# # poz_1 = macierz[1, 1]
+# # poz_2 = macierz[0][1]
+# # print(poz_1)
+# # print(poz_2)
+# # #podobnie działa funkcja lispace, które działanie jest
+# # liczby_lin = np.linspace(1,2,5)
+# # print(liczby_lin)
+# # #a teraz możemy utworzyć dwie macierze, najpierw wartość
+# # z = np.indices([5, 3])
+# # print(z)
+# # print(z[0][1][2])
+# # #podobnie jak w MATLAB-ie możemy tworzyć macierze diagramalną
+# # mat_diag = np.diag([a for a in range(5)])
+# # print(mat_diag)
+# # mat_diag = np.diag([a for a in range(5)], k=1)
+# # mat_diag2 = np.diag([a for a in range(5)], k=-1)
+# #
+# # #tablica znakowa
+# # znaki = b'ogolna'
+# # z1 = np.frombuffer(znaki, dtype='S1')
+# # print(z1)
+# # z2 = np.frombuffer(znaki, dtype='S2')
+# # print(z2)
+# #
+# # znaki = 'ogolna'
+# # z3 = np.array(list(znaki))
+# # z4 = np.array(list(znaki), dtype='S1')
+# # z5 = np.array(list(b'ogolna'))
+# # z6 = np.fromiter(znaki, dtype='S1')
+# # print(z3)
+# # print(z4)
+# # print(z5)
+# # print(z6)
+# # #cięcia
+# # a = np.arange(10)
+# # print(a)
+# # s = slice(2,7,2)
+# # print(a[s])
+# # #sposób cięcia jak w liście
+# # print(a[2:7:2])
+# # #lub (wyjmowanie konkretnych elementów)
+# # print(a[1:])
+# # print(a[2:5])
+# #
+# # mat = np.arange(25)
+# #
+# # mat = mat.reshape((5, 5))
+# # print(mat)
+# # print(mat[1:]) #od drugiego wiersza
+# # print(mat[: 1]) #druga kolumna jako wektor
+# # print(mat[: -1]) #ostatnia kolumna
+# # print(mat[2:5, 1:3]) #2 i 3 kolumna dla 3,4,5 wiersza
+# # print(mat[:, [2, 4]]) #3 i 5 kolumna
+# # print('')
+# # #
+# # x= np.array([[0,1,2],[3,4,5], [6,7,8], [9,10,11]])
+# # print(x)
+# # rows = np.array([[0, 0], [3, 3]])
+# # cols = np.array([[0, 2], [0, 2]])
+# # y = x[rows, cols]
+# # print(y)
+#
+# #Za pomocą funkcji arange stwórz tablicę numpy składającą się z 20 kolejnych wielokrotności liczby 4.
+# zad1 = np.arange(4, 81, 4)
+# print(zad1)
+# # Stwórz listę składającą się z wartości zmiennoprzecinkowych a następnie zapisz do innej zmiennej jej kopię
+# # przekonwertowaną na typ int32
+# zad2 = np.array([1.2, 2.3, 3.4, 4.5, 5.6, 6.7, 7.8, 8.9, 9.0])
+# zad2 = zad2.astype('int32')
+# print(zad2)
+# # Napisz funkcję, która będzie:•Przyjmowała jeden parametr ‘n’ w postaci liczby całkowitej•Zwracała tablicę Numpy
+# # o wymiarach n*n kolejnych potęg liczby 2
+# zad3 = np.array([2**a for a in range(9)]).reshape((3, 3))
+# print(zad3)
+# # Napisz funkcję, która będzie przyjmowała 2 parametry: liczbę, która będzie podstawą operacji potęgowania oraz ilość
+# # kolejnych potęg do wygenerowania. Korzystając z funkcji logspace generuj tablicę jednowymiarową kolejnych potęg podanej
+# # liczby, np. generuj(2,4) -> [2,4,8,16]
+# def zad4(base, n):
+#     return np.logspace(0, n-1, n, base=base)
+# ars = zad4(2, 4)
+# print(ars)
+#
+# # Napisz funkcję, która:•Na wejściu przyjmuje jeden parametr określający długość wektora
+# # •Na podstawie parametru generuj wektor, ale w kolejności odwróconej
+# # •Generuj macierz diagonalną z w/w wektorem na przekątnej oddalonej o 2 w górę od głównej przekątnej macierzy
+# zad5 = np.arange(10)
+# zad5 = zad5[::-1]
+# print(zad5)
+# zad5 = np.diag(zad5, k=2)
+# print(zad5)
+#
+# # Stwórz skrypt który na wyjściu wyświetli macierz numpy (tablica wielowymiarowa) w postaci wykreślanki, gdzie jedno słowo
+# # będzie wypisane w kolumnie, jedno w wierszu i jedno po ukosie. Jedno z tych słów powinno być wypisane od prawej do lewej.
+# zad6 = np.array([['k', 'o', 't'], ['p', 's', 'z'], ['r', 'y', 'x']])
+# print(np.fliplr(zad6).diagonal(offset=-1)[::-1])
+# print(zad6.diagonal())
+# print(np.flipud(zad6).diagonal(offset=2))
+#
+# # Stwórz pustą macierz 6x6 i wpisz do niej 3 wyrazy, jeden w kolumnie, drugi w wierszu, a trzeci po przekątnej
+# matrix = np.zeros((6,6), dtype=str)
+#
+# matrix[:, 0] = 'A'
+# matrix[1, :] = 'B'
+# np.fill_diagonal(matrix, 'C')
+#
+# print(matrix)
+#
+#
+#
+#
+#
+#
+#
+# # Napisz funkcję, która wygeneruje macierz wielowymiarową postaci:[[2 4 6][4 2 4][6 4 2]]Przy założeniach:funkcja
+# # przyjmuje parametr n, który określa wymiary macierzy jako n*n i umieszcza wielokrotność liczby 2 na kolejnych jej
+# # przekątnych rozchodzących się od głównej przekątnej.
+# def zad7(n):
+#     arg = np.zeros((n, n))
+#     for i in range(n):
+#         arg[i, i] = 2
+#         if i > 0:
+#             arg[i, i-1] = 4
+#             arg[i-1, i] = 4
+#         if i > 1:
+#             arg[i, i-2] = 6
+#             arg[i-2, i] = 6
+#     return arg
+# arg = zad7(3)
+# print(arg)
+#
+# # Napisz funkcję, która:
+# # •jako parametr wejściowy będzie przyjmowała tablicę wielowymiarową numpy oraz parametr ‘kierunek’,
+# # •parametr kierunek określa czy tablica wejściowa będzie dzielona w pionie czy poziomie
+# # •funkcja dzieli tablicę wejściową na pół (napisz warunek, który wyświetli komunikat, że ilość wierszy lub kolumn,
+# # w zależności od kierunku podziału, nie pozwala na operację)
+zad8 = np.arange(16).reshape((4, 4))
+print(zad8)
+print(zad8[:2, :2])
+#
+# # Wykorzystaj poznane na zajęciach funkcje biblioteki Numpy i stwórz macierz 5x5, która będzie zawierała kolejne
+# # wartości ciągu arytmetycznego.
+zad9 = np.arange(1, 26).reshape((5, 5))
+print(zad9)
+
+#
+#
+# #                       25_04_2023
+# # Utwórz dwie macierze 1x3 różnych wartości a następnie wykonaj operację mnożenia.
+# # utworzenie macierzy 1x3
+matrix1 = np.array([1, 2, 3])
+matrix2 = np.array([4, 5, 6])
+result = np.multiply(matrix1, matrix2)
+
+print(result)
+
+# # Utwórz macierz 3x3 oraz 4x4 i znajdź najniższe wartości dla każdej kolumny i każdego rzędu.
+# # utworzenie macierzy 3x3 i 4x4
+matrix1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+matrix2 = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
+
+print(np.amin(matrix1, axis=0))
+print(np.amin(matrix2, axis=0))
+
+print(np.amin(matrix1, axis=1))
+print(np.amin(matrix2, axis=1))
+
+# # Wykorzystaj macierze z zadania pierwszego i wykonaj iloczyn macierzy.
+# # utworzenie macierzy 1x3
+matrix1 = np.array([1, 2, 3])
+matrix2 = np.array([4, 5, 6])
+result = np.dot(matrix1, matrix2)
+
+print(result)
+
+# # Utwórz dwie macierze 1x3 gdzie pierwsza z nich będzie zawierała liczby całkowite, a druga liczby rzeczywiste. Następnie
+# # wykonaj na nich operację mnożenia.
+matrix1 = np.array([1, 2, 3], dtype=int)
+matrix2 = np.array([4.0, 5.0, 6.0])
+result = np.multiply(matrix1, matrix2)
+
+print(result)
+
+#
+# # Utwórz macierz 2x3 różnych wartości a następnie wylicz sinus dla każdej z jej wartości i zapisz do zmiennej “a”.
+
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+result = np.sin(matrix)
+
+print(result)
+
+#
+# # Utwórz nową macierz 2x3 różnych wartości a następnie wylicz cosinus dla każdej z jej wartości i zapisz do zmiennej “b”.
+
+matrix = np.array([[1, 2, 3], [4, 5, 6]])
+result = np.cos(matrix)
+
+print(result)
+
+# # Wykonaj funkcję dodawania obu macierzy zapisanych wcześniej do zmiennych a i b.
+#
+a = np.array([[1, 2, 3], [4, 5, 6]])
+a = np.sin(a)
+
+b = np.array([[0.5, 1.5, 2.5], [3.5, 4.5, 5.5]])
+b = np.cos(b)
+
+c = a + b
+print(c)
+
+# # Wygeneruj macierz 3x3 i wyświetl w pętli każdy z rzędów.
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+for row in a:
+    print(row)
+
+# # Wygeneruj macierz 3x3 i wyświetl w pętli każdy element korzystając z opcji “spłaszczenia” macierzy. (użyj funkcji flat())
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+for element in a.flat:
+    print(element)
+
+# # Wygeneruj macierz 9x9 a następnie zmień jej kształt. Jakie mamy możliwości i dlaczego?
+
+
+a = np.arange(81).reshape(9, 9)
+
+b = a.reshape(3, 27)
+c = a.reshape(27, 3)
+d = a.reshape(81, 1)
+
+print(b)
+print(c)
+print(d)
+#
+# # Wygeneruj macierz płaską (wektor) i przekształć ją na macierz 3x4. Wygeneruj w ten sposób jeszcze kombinacje 4x3 i 2x6.
+# # Spłaszcz każdą z nich i wyświetl wyniki. Czy są identyczne?
+#
+flat_matrix = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+#
+matrix_3x4 = flat_matrix.reshape((3, 4))
+#
+matrix_4x3 = flat_matrix.reshape((4, 3))
+#
+matrix_2x6 = flat_matrix.reshape((2, 6))
+#
+flat_matrix_3x4 = matrix_3x4.flatten()
+flat_matrix_4x3 = matrix_4x3.flatten()
+flat_matrix_2x6 = matrix_2x6.flatten()
+#
+print("Macierz 3x4:")
+print(matrix_3x4)
+print("Spłaszczona macierz 3x4:")
+print(flat_matrix_3x4)
+#
+print("Macierz 4x3:")
+print(matrix_4x3)
+print("Spłaszczona macierz 4x3:")
+print(flat_matrix_4x3)
+#
+print("Macierz 2x6:")
+print(matrix_2x6)
+print("Spłaszczona macierz 2x6:")
+print(flat_matrix_2x6)
+#
+print("Czy spłaszczone macierze są identyczne?")
+print(np.array_equal(flat_matrix_3x4, flat_matrix_4x3) and np.array_equal(flat_matrix_3x4, flat_matrix_2x6))
+#
+#
+#
+# #                                       26_04_2023
+#
+# # Zadanie 1: Wczytaj do DataFrame arkusz z narodzinami dzieci w Polsce dostępny w pliku /datasets/imiona.xlsx
+#
+import pandas as pd
+df = pd.read_excel('imiona.xlsx')
+print(df)
+#
+#
+# # Zadanie 2: Z danych z zadania 1 wyświetl (korzystając w miarę możliwości z funkcji biblioteki Pandas):
+# # •tylko te rekordy gdzie liczba nadanych imion była większa niż 1000 w danym roku,
+# # •tylko rekordy gdzie nadane imię jest takie jak Twoje,
+# # •sumę wszystkich urodzonych dzieci w całym danym okresie,
+# # •sumędzieci urodzonych w latach 2000-2005,
+# # •sumę urodzonych chłopców i dziewczynek,
+# # •najbardziej popularne imię dziewczynki i chłopca w danym roku ( czyli po 2 rekordy na rok),
+# # •najbardziej popularne imię dziewczynki i chłopca w całym danym okresie.
+#
+#
+# # tylko te rekordy, gdzie liczba nadanych imion była większa niż 1000 w danym roku
+df_over_1000 = df[df['Liczba'] > 1000]
+print("Rekordy, gdzie liczba nadanych imion była większa niż 1000 w danym roku:")
+print(df_over_1000)
+#
+# # tylko rekordy, gdzie nadane imię jest takie jak Twoje
+my_name = "Szymon"
+df_my_name = df[df['Imie'] == my_name]
+print("Rekordy, gdzie nadane imię jest takie jak moje:")
+print(df_my_name)
+#
+# # suma wszystkich urodzonych dzieci w całym danym okresie
+total_births = df['Liczba'].sum()
+print("Suma wszystkich urodzonych dzieci w całym danym okresie:")
+print(total_births)
+#
+# # suma dzieci urodzonych w latach 2000-2005
+births_2000_2005 = df[df['Rok'].between(2000, 2005)]['Liczba'].sum()
+print("Suma dzieci urodzonych w latach 2000-2005:")
+print(births_2000_2005)
+#
+# suma urodzonych chłopców i dziewczynek
+male_births = df[df['Plec'] == 'M']['Liczba'].sum()
+female_births = df[df['Plec'] == 'K']['Liczba'].sum()
+print("Suma urodzonych chłopców i dziewczynek:")
+print("Chłopcy:", male_births)
+print("Dziewczynki:", female_births)
+#
+# # najbardziej popularne imię dziewczynki i chłopca w danym roku (czyli po 2 rekordy na rok)
+popular_names = df.groupby(['Rok', 'Plec'], as_index=False)['Liczba', 'Imie'].max()
+print("Najbardziej popularne imię dziewczynki i chłopca w danym roku:")
+print(popular_names)
+#
+# # najbardziej popularne imię dziewczynki i chłopca w całym danym okresie
+total_popular_names = df.groupby(['Imie', 'Plec'], as_index=False)['Liczba'].sum().sort_values(by='Liczba', ascending=False).head(2)
+print("Najbardziej popularne imię dziewczynki i chłopca w całym danym okresie:")
+print(total_popular_names)
+#
+#
+#
+# # Zadanie 3: Wczytaj plik /datasets/zamowieniana.csv a następnie wyświetl:
+# # •listę unikalnych nazwisk sprzedawców (przetwarzając zwróconą pojedynczą kolumnę z DataFrame),
+# # •5 najwyższych wartości zamówień,
+# # •ilość zamówień złożonych przez każdego sprzedawcę,
+# # •sumę zamówień dla każdego kraju,
+# # •sumę zamówień dla roku 2005, dla sprzedawców z Polski,
+# # •średnią kwotę zamówienia w 2004 roku,
+# # •zapisz dane za 2004 rok do pliku zamówienia_2004.csv a dane za 2005 do pliku zamówienia_2005.csv.
+#
+df = pd.read_csv('zamowienia.csv', delimiter=';')
+#
+# # Lista unikalnych nazwisk sprzedawców
+sprzedawcy = df['Sprzedawca'].unique()
+print('Lista unikalnych nazwisk sprzedawców:')
+print(sprzedawcy)
+#
+# # 5 najwyższych wartości zamówień
+najwyzsze_zamowienia = df.nlargest(5, 'Utarg')
+print('5 najwyższych wartości zamówień:')
+print(najwyzsze_zamowienia)
+#
+# # Ilość zamówień złożonych przez każdego sprzedawcę
+ilosc_zamowien = df['Sprzedawca'].value_counts()
+print('Ilość zamówień złożonych przez każdego sprzedawcę:')
+print(ilosc_zamowien)
+#
+# # Suma zamówień dla każdego kraju
+suma_zamowien_kraj = df.groupby(['Kraj'])['Utarg'].sum()
+print('Suma zamówień dla każdego kraju:')
+print(suma_zamowien_kraj)
+#
+# # Suma zamówień dla roku 2005, dla sprzedawców z Polski
+suma_zamowien_2005 = df[(df['Data zamowienia'] >= '2005-01-01') & (df['Data zamowienia'] <= '2005-12-31') & (df['Kraj'] == 'Polska')]['Utarg'].sum()
+print('Suma zamówień dla roku 2005, dla sprzedawców z Polski:', suma_zamowien_2005)
+#
+# # Średnia kwota zamówienia w 2004 roku
+srednia_kwota_2004 = df[df['Data zamowienia'].str.startswith('2004')]['Utarg'].mean()
+print('Średnia kwota zamówienia w 2004 roku:', srednia_kwota_2004)
+#
+# # Zapis danych za 2004 rok do pliku zamówienia_2004.csv
+df[df['Data zamowienia'].str.startswith('2004')].to_csv('zamowienia_2004.csv')
+#
+# # Zapis danych za 2005 rok do pliku zamówienia_2005.csv
+df[df['Data zamowienia'].str.startswith('2005')].to_csv('zamowienia_2005.csv')
+#
+#
+#
+# #                                   10_05_2023
+import matplotlib.pyplot as plt
+import numpy as np
+from  PIL import Image
+
+xpoints = np.array([0, 6])
+ypoints = np.array([0, 250])
+
+plt.plot(xpoints, ypoints)
+plt.show()
+
+#           Z punktami
+x = np.array([1,2,3,4])
+y= x**2
+
+plt.plot(x, y, 'ro-')
+plt.show()
+
+
+#           Z niebieskimi punktami
+plt.plot(x, y, 'r-')
+plt.plot(x, y, 'o')
+plt.axis([0,6, 0,20])
+plt.show()
+#          Z legendą
+a= np.arange(0, 5, 0.2)
+plt.plot(a, a, 'r--', a, a**2, 'bs', a, a**3, 'g^')
+plt.legend(labels=['liniowa', 'kwadratowa', 'sześcienna'], loc='center left')
+plt.show()
+
+#           Ten sam wykres co wyżej tylko przy użyciu trzech funkcji plot z parametrem label ustawiającym tytuł linii
+a= np.arange(0, 5, 0.2)
+plt.plot(a, a, 'r--', label='liniowa')
+plt.plot(a, a**2, 'bs', label='kwadratowa')
+plt.plot(a, a**3, 'g^', label='sześcienna')
+plt.legend(loc='center left')
+plt.show()
+
+
+plt.xlabel('x')
+plt.ylabel('y')
+# #           Zapis do pliku
+plt.title('Wykres funkcji liniowej')
+plt.savefig('wykres.png')
+plt.show()
+img = Image.open('wykres.png')
+img = img.convert('RGB')
+img.save('wykres.jpg')
+
+#   wykres linoiwy dla wartości sinus gdzie x<0,10> z krokiem 0.1, linia przerywana
+x = np.arange(0, 11, 0.1)
+y = np.sin(x)
+plt.plot(x, y, 'r--')
+plt.show()
+
+#---------------------------------------------------------------------------------------------
+
+#   wartości losowe
+
+data = {'a' : np.arange(50),
+        'c' : np.random.randint(0, 50, 50),
+        'd' : np.random.randn(50)}
+#
+data['b'] = data['a'] + 10 * np.random.randn(50)
+data['d'] = np.abs(data['d']) * 100
+#
+plt.scatter('a', 'b', c='c', s='d', data=data) # C- kolor, S- wielkość, data- dane
+plt.xlabel('wartość a')
+plt.ylabel('wartość b')
+plt.show()
+
+
+#   Siatki wykresu
+
+x1= np.arange(0,2,0.02)
+x2= np.arange(0,2,0.02)
+#
+y1= np.sin(2*np.pi*x1)
+y2= np.cos(2*np.pi*x2)
+#
+plt.subplot(2, 1, 1), # 2- ilość wierszy, 1- ilość kolumn, 1- numer wykresu
+plt.plot(x1, y1)
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.title('Wykres sin(x)')
+#
+plt.subplot(2, 1, 2) # 2- ilość wierszy, 1- ilość kolumn, 2- numer wykresu
+plt.plot(x2, y2)
+plt.xlabel('x')
+plt.ylabel('cos(x)')
+plt.title('Wykres cos(x)')
+plt.subplots_adjust(hspace=0.5) # odstęp między wykresami
+plt.show()
+
+# Te same wykresy co wyżej, ale w siatce 4 wiersze, 1 kolumna, wykresy na skraju siatki
+
+x1= np.arange(0,2,0.02)
+x2= np.arange(0,2,0.02)
+y1= np.sin(2*np.pi*x1)
+y2= np.cos(2*np.pi*x2)
+
+plt.subplot(4, 1, 1), # 4- ilość wierszy, 1- ilość kolumn, 1- numer wykresu
+plt.plot(x1, y1)
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+plt.title('Wykres sin(x)')
+plt.subplot(4, 1, 4) # 4- ilość wierszy, 1- ilość kolumn, 2- numer wykresu
+plt.plot(x2, y2)
+plt.xlabel('x')
+plt.ylabel('cos(x)')
+plt.title('Wykres cos(x)')
+plt.subplots_adjust(hspace=0.5) # odstęp między wykresami
+plt.show()
+
+fig, axs = plt.subplots(3, 2)
+axs[0, 0].plot(x1, y1, 'r') # 0,0 - wiersz, kolumna, r- kolor
+axs[0, 0].set_xlabel('x')
+axs[0, 0].set_ylabel('sin(x)')
+axs[0, 0].set_title('Wykres sin(x)')
+#
+axs[1, 1].plot(x2, y2, 'g') # 1,1 - wiersz, kolumna, g- kolor
+axs[1, 1].set_xlabel('x')
+axs[1, 1].set_ylabel('cos(x)')
+axs[1, 1].set_title('Wykres cos(x)')
+#
+axs[2, 0].plot(x1, y1, 'b') # 2,0 - wiersz, kolumna, b- kolor
+axs[2, 0].set_xlabel('x')
+axs[2, 0].set_ylabel('sin(x)')
+axs[2, 0].set_title('Wykres sin(x)')
+plt.subplots_adjust(hspace=0.5) # odstęp między wykresami
+#
+fig.delaxes(axs[1, 0]) # usuwanie wykresu
+fig.delaxes(axs[0, 1]) # usuwanie wykresu
+fig.delaxes(axs[2, 1]) # usuwanie wykresu
+plt.show()
+
+
+  wykres liniowy na podstawie serii danych, import pandas as pd
+ts = pd.Series(np.random.randn(1000))
+ts = ts.cumsum()
+
+ts.plot()
+plt.show()
+
+
+data = {'Kraj': ['Belgia', 'Indie', 'Brazylia', 'Polska'],
+        'Stolica': ['Bruksela', 'New Delhi', 'Brasilia', 'Warszawa'],
+        'Kontynent': ['Europa', 'Azja', 'Ameryka Południowa', 'Europa'],
+        'Populacja': [11109846, 1303171035, 207847528, 38675467]}
+df = pd.DataFrame(data)
+#
+# #   wykres słupkowy
+grupa = df.groupby('Kontynent').agg({'Populacja': ['sum']})
+# # sposób 1
+grupa.plot(kind='bar', xlabel='Kontynent', ylabel='Populacja', legend=True, title='Populacja na kontynentach', rot=0)
+#
+# # sposób 2
+wykres = grupa.plot.bar()
+wykres.set_xlabel('Kontynent')
+wykres.set_ylabel('Populacja')
+wykres.tick_params(axis='x', labelrotation=0)
+wykres.legend()
+wykres.set_title('Populacja na kontynentach')
+
+plt.show()
+
+
+#   wykres kołowy
+
+df = pd.read_csv('dane.csv', header=0, sep=';', decimal='.') # wczytanie danych z pliku csv, nagłówek w pierwszym wierszu, separator to średnik, kropka jako separator dziesiętny
+print(df)
+
+grupa = df.groupby('Imię i nazwisko').agg({'Wartość zamówienia': ['sum']}) # grupowanie po imieniu i nazwisku, sumowanie wartości zamówienia dla każdego imienia i nazwiska osobno
+grupa.plot(kind='pie', subplots=True, autopct='%.2f %%', fontsize=20, colors=['red', 'green']) # subplots - wykresy osobno, autopct - procenty z dwoma miejscami po przecinku, fontsize - rozmiar czcionki, colors - kolory wykresów
+# osobno, autopct - procenty z dwoma miejscami po przecinku, fontsize - rozmiar czcionki, colors - kolory wykresów osobno, autopct - procenty z dwoma miejscami po przecinku, fontsize - rozmiar czcionki, colors - kolory wykresów
+plt.legend(loc='upper left') # legenda, automatycznie wybiera najlepsze miejsce na wykresie, można podać konkretne miejsce np. plt.legend(loc='upper left')
+plt.show()
+
+#/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+#                               17_05_2023
+
+ts= pd.Series(np.random.randn(1000)) # losowe dane
+ts= ts.cumsum() # suma skumulowana
+
+df= pd.DataFrame(ts, columns=['wartości']) # tworzenie ramki danych
+print(df)
+df['Średnia krocząca']= df.rolling(window=50).mean() # średnia krocząca
+df.plot() # wykres
+plt.legend() # legenda
+plt.show() # wykres z ramki danych
+#---------------------------------------------------------------------------------------------------------------------
+x= np.random.randn(10000) # losowe dane
+plt.hist(x, bins=50, facecolor='g', alpha=0.75, density=True) # histogram, bins- ilość słupków, facecolor- kolor słupków,
+# alpha- przeźroczystość słupków, density- prawdopodobieństwo
+plt.xlabel('Wartości') # opisy osi
+plt.ylabel('Prawdopodobieństwo') # opisy osi
+plt.title('Histogram') # tytuł wykresu
+plt.grid() # siatka
+plt.show() # wykres
+#---------------------------------------------------------------------------------------------------------------------
+#                                         wykres kołowy
+df= pd.read_csv('dane.csv', header=0, sep=';', decimal='.') # wczytanie danych
+print(df) # wyświetlenie danych
+seria = df.groupby('Imię i nazwisko')['Wartość zamówienia'].sum() # grupowanie danych
+wedges, texts, autotext = plt.pie(x=seria, labels=seria.index, autopct=lambda pct: "{:.1f}%".format(pct),
+                                   textprops=dict(color="black"), colors=['red', 'green'])
+# wykres kołowy, x- dane, labels- etykiety, autopc- procenty, textprops- kolor etykiet, colors- kolory wykresu,
+# wedges- kształty, texts- etykiety, autotexts- procenty
+plt.title("Suma zamówień dla sprzedawców") # tytuł wykresu
+plt.legend(loc="lower right") # legenda
+plt.ylabel('Procentowy wynik wartości zamówienia') # opisy osi
+plt.show() # wykres
+#---------------------------------------------------------------------------------------------------------------------
+
+#                                       Seaborn
+
+import seaborn as sns
+sns.set()
+
+sns.set(rc={'figure.figsize': (8, 6)})
+# rozmiar wykresu, rc- rozmiar wykresu, figsize- rozmiar wykresu, 8- szerokość, 6- wysokość,
+sns.lineplot(x=[1, 2, 3, 4], y=[1, 4, 9, 16], label='linia nr', color='red', marker='o', linestyle=':')
+# wykres liniowy, x- dane, y- dane, label- etykieta, color- kolor, marker- kształt, linestyle- styl linii
+sns.lineplot(x=[1, 2, 3, 4], y=[2, 5, 10, 17], label='linia nr 2', color='blue', marker='o', linestyle=':')
+plt.xlabel('Oś X') # opisy osi
+plt.ylabel('Oś Y') # opisy osi
+plt.title('Wykres') # tytuł wykresu
+plt.show()
+
+#---------------------------------------------------------------------------------------------------------------------
+s=pd.Series(np.random.randn(1000)) # losowe dane
+s=s.cumsum() # suma skumulowana
+wykres=sns.relplot(kind='line', data=s, label='dane z serii')
+# wykres liniowy, kind- rodzaj wykresu, data- dane, label- etykieta
+wykres.fig.set_size_inches(8, 6) # rozmiar wykresu
+wykres.fig.suptitle('Wykres liniowy') # tytuł wykresu
+wykres.set_xlabels('indeksy') # opisy osi
+wykres.set_ylabels('wartości') # opisy osi
+wykres.add_legend() # legenda
+wykres.figure.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
+# marginesy wykresu (lewy, prawy, dolny, górny), 'left' nie może być większy lub równy 'right', 'bottom' nie może być
+# większy lub równy 'top', 'left', 'right', 'bottom', 'top'- wartości od 0 do 1
+plt.show() # wykres
+
+#---------------------------------------------------------------------------------------------------------------------
+
+df= pd.read_csv('iris.data', header=0, sep=',', decimal='.') # wczytanie danych
+print(df)
+sns.lineplot(data=df, x=df.index, y='sepal length', hue='class', palette=['yellow', 'green', 'red']) # wykres liniowy
+plt.xlabel('indeksy') # opisy osi
+plt.title('Wykres liniowy z Iris dataset') # tytuł wykresu
+plt.show() # wykres
+
+#---------------------------------------------------------------------------------------------------------------------
+
+data={'a': np.arange(50), 'c': np.random.randint(0, 50, 50), 'd': np.random.randn(50)} # dane do wykresu
+data['b']= data['a']+10 * np.random.randn(50) # dane do wykresu (b) = dane do wykresu (a) + 10 * losowe dane
+data['d']= np.abs(data['d']) * 100 # dane do wykresu (d) = wartość bezwzględna z danych do wykresu (d) * 100
+df= pd.DataFrame(data) # tworzenie ramki danych
+
+plot=sns.relplot(data=df, x='a', y='b', hue='c', size='d', palette='bright', legend=True) # wykres liniowy z ramki danych
+# x- dane, y- dane, hue- kolor, size- rozmiar, palette- paleta kolorów, legend- legenda
+plot.set(xticks=data['a']) # opisy osi x
+plt.show()
+
+#---------------------------------------------------------------------------------------------------------------------
+
+data= {'Kraj': ['Belgia', 'Indie', 'Brazylia', 'Polska'],
+       'Stolica': ['Bruksela', 'New Delhi', 'Brasilia', 'Warszawa'],
+       'Kontynent': ['Europa', 'Azja', 'Ameryka Południowa', 'Europa'],
+       'Popilacja': [11190846, 1303171035, 207847528, 38675467]}
+df=pd.DataFrame(data) # tworzenie ramki danych
+plot = sns.barplot(data=df, x='Kontynent', y='Popilacja', hue='Kontynent', estimator=np.sum, errorbar=None,
+                   dodge=False, palette=['red', 'green', 'blue'])
+# wykres słupkowy, x- dane, y- dane, hue- kolor, estimator- funkcja, errorbar- błąd, dodge- odstęp, palette- paleta
+# kolorów, None- brak, 'red', 'green', 'blue'- kolory wykresu
+plot.legend(title="Populacja na kontynentach") # tytuł legendy
+plot.set(title='Wykres słupkowy') # tytuł wykresu
+plt.show() # wykres
+
+#---------------------------------------------------------------------------------------------------------------------
+
+# Zadanie 1 Stwórz wykres liniowy, który wyświetli liczbę urodzonych dzieci dla każdego roku, pobrane dane z pliku "imiona (1)".
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df= pd.read_csv('imiona.csv', header=0, sep=';', decimal='.')
+print(df)
+sns.lineplot(data=df, x='Rok', y='Liczba', hue='Plec', palette=['blue', 'red'])
+plt.xlabel('Rok') # opisy osi
+plt.ylabel('Liczba') # opisy osi
+plt.title('Wykres liniowy') # tytuł wykresu
+plt.show() # wykres
+
+# Zadanie 2 Stwórz wykres słupkowy, który wyświetli liczbę urodzonych chłopców i dziewczynek z całego zbioru.
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df= pd.read_csv('imiona.csv', header=0, sep=';', decimal='.')
+print(df)
+plot = sns.barplot(data=df, x='Plec', y='Liczba', hue='Plec', estimator=np.sum, errorbar=None,
+                   dodge=False, palette=['blue', 'red'])
+plot.legend(title="Liczba urodzonych dzieci") # tytuł legendy
+plot.set(title='Wykres słupkowy') # tytuł wykresu
+plt.show() # wykres
+
+# Zadanie 3  Wykres kołowy z wartościami % ukazującymi ilość urodzonych chłopców i dziewczynek w ostatnich 5 latach z datasetu.
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df= pd.read_csv('imiona.csv', header=0, sep=';', decimal='.')
+print(df)
+df= df.groupby(['Plec']).agg({'Liczba': ['sum']})
+print(df)
+df= df.iloc[0:2, :]
+print(df)
+df= df.reset_index()
+print(df)
+plot= df.plot.pie(subplots=True, autopct='%.2f %%', fontsize=20, figsize=(6, 6))
+plt.legend(title='Płeć')
+plt.show()
+
+# Zadanie 4 Wyświetl na pomocą wykresu słupkowego ilość złożonych zamówień przez poszczególnych sprzedawców (zbiór danych zamówienia.csv).
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df= pd.read_csv('zamowienia.csv', header=0, sep=';', decimal='.')
+print(df)
+df= df.groupby(['Sprzedawca']).agg({'idZamowienia': ['count']})
+print(df)
+df= df.reset_index()
+print(df)
+plot = sns.barplot(data=df, x='Sprzedawca', y='idZamowienia', hue='Sprzedawca', estimator=np.sum, errorbar=None,
+                   dodge=False, palette=['blue', 'red', 'green', 'yellow', 'orange', 'purple', 'pink'])
+plot.legend(title="Liczba zamówień") # tytuł legendy
+plot.set(title='Wykres słupkowy') # tytuł wykresu
+plt.show() # wykres
+
+
+# struktura pandas
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD')) # 10 wierszy, 4 kolumny
+print(df) # cała struktura
+print(df.head()) # pierwsze 5 wierszy
+print(df.tail(3)) # ostatnie 3 wiersze
+print(df.index) # indeksy
+print(df.columns) # nazwy kolumn
+print(df.values) # wartości
+print(df.describe()) # opis statystyczny
+
+
+# struktura pandas ze wczytaniem danych
+
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('plik.csv', sep=';', header=0, index_col=0) # 10 wierszy, 4 kolumny (pierwsza kolumna jako indeks), separator to średnik, nagłówek w pierwszym wierszu, indeksy w pierwszej kolumnie, plik csv
+print(df) # cała struktura
+print(df.head()) # pierwsze 5 wierszy
+print(df.tail(3)) # ostatnie 3 wiersze
+print(df.index) # indeksy
+print(df.columns) # nazwy kolumn
+print(df.values) # wartości
+print(df.describe()) # opis statystyczny
+
+
+# wykres funkcji, przydział na x-ie, przedziały(działanie wektorów)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-np.pi, np.pi, 256, endpoint=True) # 256 punktów od -pi do pi
+c, s = np.cos(x), np.sin(x) # cos i sin z x
+plt.plot(x, c) # wykres cos(x)
+plt.plot(x, s) # wykres sin(x)
+plt.show() # wyświetlenie wykresu
+
+
+# Odtworzenie siatki
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-np.pi, np.pi, 256, endpoint=True) # 256 punktów od -pi do pi
+c, s = np.cos(x), np.sin(x) # cos i sin z x
+plt.plot(x, c, color="blue", linewidth=1.0, linestyle="-") # wykres cos(x)
+plt.plot(x, s, color="green", linewidth=1.0, linestyle="-") # wykres sin(x)
+plt.xlim(-4.0, 4.0) # przedział x
+plt.ylim(-1.0, 1.0) # przedział y
+plt.xticks(np.linspace(-4, 4, 9, endpoint=True)) # podziałka x
+plt.yticks(np.linspace(-1, 1, 5, endpoint=True)) # podziałka y
+plt.show() # wyświetlenie wykresu
+
+
+# macierz i wyciąganie elementu
+
+import numpy as np
+
+a = np.array([[1, 2, 3], [4, 5, 6]]) # macierz 2x3
+print(a[0, 0]) # pierwszy element
+print(a[0, 1]) # drugi element
+print(a[1, 0]) # trzeci element
+print(a[1, 2]) # czwarty element
+
+
+# wykres na danych, wczytanie z pliku
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x, y = np.loadtxt('plik.csv', delimiter=';', unpack=True) # wczytanie danych z pliku csv, separator to średnik, rozpakowanie na x i y
+plt.plot(x, y, label='dane z pliku csv', color='red', linewidth=1.0, linestyle='-') # wykres danych
+plt.xlabel('x') # etykieta osi x
+plt.ylabel('y') # etykieta osi y
+plt.title('Wykres danych z pliku csv') # tytuł wykresu
+plt.legend() # legenda
+plt.show() # wyświetlenie wykresu
+
+
+# wykres na danych, wczytanie z pliku, zapis do pliku
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x, y = np.loadtxt('plik.csv', delimiter=';', unpack=True) # wczytanie danych z pliku csv, separator to średnik, rozpakowanie na x i y, plik csv
+plt.plot(x, y, label='dane z pliku csv', color='red', linewidth=1.0, linestyle='-') # wykres danych, kolor czerwony, grubość linii 1, styl ciągły,
+plt.xlabel('x') # etykieta osi x
+plt.ylabel('y') # etykieta osi y
+plt.title('Wykres danych z pliku csv') # tytuł wykresu
+plt.legend() # legenda, automatycznie wybiera najlepsze miejsce na wykresie, można podać konkretne miejsce np. plt.legend(loc='upper left')
+plt.savefig('wykres.png') # zapis do pliku
+plt.show() # wyświetlenie wykresu
+
+
+# struktura seaborn
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set(style="ticks") # styl seaborn
+df = sns.load_dataset("iris") # wczytanie danych
+sns.pairplot(df, hue="species") # wykres
+plt.show() # wyświetlenie wykresu
+
+
+# Na wykresie wyświetl wykres liniowy funkcji f(x) = 1/x dla x ε[1, 20]. Dodaj etykietę do linii wykresu i wyświetl legendę. Dodaj odpowiednie
+# etykiety do osi wykresu (‘x’, ’f(x)’) oraz ustaw zakres osi na (0, 1) oraz (1, długość wektora x).
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(1, 20, 20) # tworzy wektor x od 1 do 20
+y = 1/x # oblicza wartości funkcji
+
+plt.plot(x, y, label='f(x) = 1/x') # rysuje wykres funkcji
+plt.xlabel('x') # etykieta osi x
+plt.ylabel('f(x)') # etykieta osi y
+plt.title("Wykres funkcji f(x) = 1/x") # tytuł wykresu
+plt.legend() # wyświetla legendę
+plt.show()
+
+
+# Korzystając ze zbioru danych Iris (https://archive.ics.uci.edu/ml/datasets/iris) wygeneruj wykres punktowy, gdzie wektor x to wartość
+# ‘sepal length’ a y to ‘sepal width’, dodaj paletę kolorów c na przykładzie listingu 6 a parametr s niech będzie wartością absolutną z
+# różnicy wartości poszczególnych elementów wektorów x oraz y.
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+iris = pd.read_csv('iris.data', sep=',', decimal='.', header=None) # wczytanie danych z pliku
+iris.columns = ['sepal length', 'sepal width', 'petal length', 'petal width', 'class'] # nadanie nazw kolumnom
+
+x = iris['sepal length'] # wektor x to wartość ‘sepal length’
+y = iris['sepal width'] # y to ‘sepal width’
+c = np.random.randint(0, 50, len(x))
+
+plt.scatter(x, y, c=c, s=np.abs(x-y))
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.show()
+
+
+# Korzystając z biblioteki pandas wczytaj zbiór danych z narodzinami dzieci przedstawiony w lekcji 8. Następnie na jednym płótnie
+# wyświetl 3 wykresy (jeden wiersz i 3 kolumny). Dodaj do wykresów stosowne etykiety. Poustawiaj różne kolory dla wykresów.
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+births = pd.read_csv('births.csv', sep=',', decimal='.', header=None) # wczytanie danych z pliku
+
+
+plt.subplot(1, 3, 1)
+plt.plot(births[0], births[1], 'r')
+plt.xlabel('rok')
+plt.ylabel('ilość urodzeń')
+
+plt.subplot(1, 3, 2)
+plt.plot(births[0], births[2], 'g')
+plt.xlabel('rok')
+plt.ylabel('ilość urodzeń')
+
+plt.subplot(1, 3, 3)
+plt.plot(births[0], births[3], 'b')
+plt.xlabel('rok')
+plt.ylabel('ilość urodzeń')
+
+plt.show()
+
+
+
+# Korzystając z biblioteki pandas wczytaj zbiór danych z narodzinami (narodziny.csv). Następnie na jednym płótnie wyświetl 3 wykresy
+# (jeden wiersz i 3 kolumny). Dodaj do wykresów stosowne etykiety. Poustawiaj różne kolory dla wykresów.
+# 1 wykres –wykres słupkowy przedstawiający ilość narodzonych dziewczynek i chłopców w całym okresie.
+# 2 wykres –wykres liniowy, gdzie będą dwie linie, jedna dla ilości urodzonych kobiet, druga dla mężczyzn dla każdego roku z osobna. Czyli y to
+# ilość narodzonych kobiet lub mężczyzn (dwie linie), x to rok.
+# 3 wykres –wykres słupkowy przedstawiający sumę urodzonych dzieci w każdym roku.
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Wczytanie danych z pliku narodziny.csv
+data = pd.read_csv('narodziny.csv')
+
+# Wykres słupkowy przedstawiający ilość narodzonych dziewczynek i chłopców w całym okresie
+plt.subplot(1, 3, 1)
+gender_counts = data.groupby('Płeć').size()
+gender_counts.plot(kind='bar', color=['pink', 'blue'])
+plt.title('Ilość narodzonych dziewczynek i chłopców')
+plt.xlabel('Płeć')
+plt.ylabel('Ilość')
+
+# Wykres liniowy przedstawiający ilość narodzonych kobiet i mężczyzn dla każdego roku z osobna
+plt.subplot(1, 3, 2)
+yearly_counts = data.groupby(['Rok', 'Płeć']).size().unstack()
+yearly_counts.plot(kind='line')
+plt.title('Ilość narodzonych kobiet i mężczyzn w poszczególnych latach')
+plt.xlabel('Rok')
+plt.ylabel('Ilość')
+
+# Wykres słupkowy przedstawiający sumę urodzonych dzieci w każdym roku
+plt.subplot(1, 3, 3)
+total_counts = data.groupby('Rok').size()
+total_counts.plot(kind='bar', color='green')
+plt.title('Suma urodzonych dzieci w poszczególnych latach')
+plt.xlabel('Rok')
+plt.ylabel('Suma')
+
+# Wyświetlenie wykresów
+plt.tight_layout()
+plt.show()
+
+# Zapis wykresów do pliku
+plt.savefig('wykresy.png')
