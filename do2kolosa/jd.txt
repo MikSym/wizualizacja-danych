@@ -398,3 +398,36 @@ ax_dict['bottom'].plot([3, 2, 1], label="test2")
 ax_dict['bottom'].legend(bbox_to_anchor=(1.05, 1),
                          loc='upper left', borderaxespad=0.)
 
+-----------------------------------------------------------------------
+import pandas as pd
+import numpy as np
+import random
+import seaborn as sns
+import matplotlib.pyplot as plt
+import PIL
+from PIL import Image
+import math
+#ZAD1
+def f(x):
+    return (np.sqrt(x) + (3 * x)) / (4 * x + 5)
+x = np.arange(2, 9.5, 0.5)
+y = f(x)
+plt.plot(x, y, label='f(x) = (√(x) + (3x)) / (4x + 5)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('Wykres funkcji f(x) = (√(x) + (3x)) / (4x + 5)')
+plt.legend()
+plt.xlim(2, 9)
+plt.savefig('Mikolaj_Symolon_zad1.png')
+plt.show()
+#ZAD2
+x1 = np.arange(-3, 5.1, 0.5)
+y1 = x1*x1+(np.sin(x1*x1)/x1)
+plt.plot(x1, y1,'r^')
+plt.legend(labels=['x^2+(sin(x^2)/x)'], loc='upper left')
+plt.xlabel('x')
+plt.ylabel('Wartość funkcji')
+plt.title('x^2+(sin(x^2)/x)')
+plt.xlim(-3, 5)
+plt.savefig('Mikolaj_Symolon_zad2.png')
+plt.show()
