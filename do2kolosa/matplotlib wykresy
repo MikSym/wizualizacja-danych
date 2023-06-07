@@ -68,6 +68,23 @@ import math
 # plt.ylabel('b')
 # plt.show()
 
+# Generowanie wartości X
+X = np.arange(-5, 6)
+# Obliczanie wartości funkcji F(X)
+F_X = X**2 + 2*X**2
+# Tworzenie wykresu liniowego
+plt.plot(X, F_X)
+# Ustawianie zakresu osi X i Y
+plt.xlim(-5, 5)
+plt.ylim(min(F_X), max(F_X))
+# Dodawanie etykiet osi X i Y
+plt.xlabel('X')
+plt.ylabel('F(X)')
+# Dodawanie tytułu wykresu
+plt.title('Wykres funkcji F(X) = X^2 + 2X^2')
+# Wyświetlanie wykresu
+plt.show()
+
 #wykres sin i cos
 # x1 = np.arange(0, 2, 0.02)
 # x2 = np.arange(0, 2, 0.02)
