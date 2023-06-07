@@ -1,0 +1,125 @@
+# Utworzenie wektora x
+x = np.linspace(-3, 5, 25)
+# Obliczenie wartości funkcji f(x)
+y = (8*x**2)/4 + np.cos(x)
+# Utworzenie wykresu
+plt.plot(x, y, label='f(x) = (8*x^2)/4 + cos(x)')
+# Dodanie etykiet do osi wykresu
+plt.xlabel('x')
+plt.ylabel('f(x)')
+# Ustawienie zakresu osi x na granice przedziału
+plt.xlim([-3, 5])
+# Dodanie legendy
+plt.legend()
+# Dodanie tytułu wykresu
+plt.title('Wykres funkcji f(x) = (8*x^2)/4 + cos(x)')
+# Wyświetlenie wykresu
+plt.show()
+
+# Utworzenie wektora x
+x = np.linspace(-3, 5, 25)
+# Obliczenie wartości funkcji f(x)
+y = (8*x**2)/4 + np.cos(x)
+# Utworzenie wektora z drugim wektorem
+z = np.sin(x)
+# Utworzenie wykresu
+plt.plot(x, y, label='f(x) = (8*x^2)/4 + cos(x)')
+plt.plot(x, z, label='sin(x)')
+# Dodanie etykiet do osi wykresu
+plt.xlabel('x')
+plt.ylabel('Wartość')
+# Ustawienie zakresu osi x na granice przedziału
+plt.xlim([-3, 5])
+# Dodanie legendy
+plt.legend()
+# Dodanie tytułu wykresu
+plt.title('Wykres funkcji f(x) = (8*x^2)/4 + cos(x) oraz sin(x)')
+# Wyświetlenie wykresu
+plt.show()
+
+
+
+
+# Wczytanie pliku 'glass.data' do ramki danych
+df = pd.read_csv('glass.data', header=None)
+# Wybór 100 losowych wierszy bez powtarzania
+new_df = df.sample(n=100, replace=False)
+# Grupowanie po kolumnie 'Type of glass'
+grouped_df = new_df.groupby('Type of glass')
+# Obliczenie sumy zużycia aluminium dla każdego typu szkła
+aluminum_sum = grouped_df['Aluminum'].sum()
+# Utworzenie wykresu kołowego
+aluminum_sum.plot(kind='pie', autopct='%1.1f%%')
+# Dodanie tytułu wykresu
+plt.title('Procentowe zużycie aluminium')
+# Wyświetlenie wykresu
+plt.show()
+
+# Wczytanie pliku 'glass.data' do ramki danych
+df = pd.read_csv('glass.data', header=None)
+# Ustawienie stylu wykresu na podstawowy
+sns.set(style="whitegrid")
+# Obliczenie ilości wystąpień każdego rodzaju szkła
+glass_counts = df[0].value_counts()
+# Utworzenie wykresu słupkowego
+plt.figure(figsize=(8, 6))
+sns.barplot(x=glass_counts.index, y=glass_counts.values)
+# Dodanie etykiet osi, legendy i tytułu wykresu
+plt.xlabel('Rodzaj szkła')
+plt.ylabel('Ilość')
+plt.title('Ilość każdego rodzaju szkła')
+plt.xticks(rotation=45)
+# Wyświetlenie wykresu
+plt.show()
+
+
+# Utworzenie wektora x
+x = np.arange(-3, 5, 0.3)
+
+# Obliczenie wartości funkcji f(x)
+y = (x**2 + 3*x)/5 + np.sin(x)
+
+# Utworzenie wektora z drugim wektorem
+z = np.cos(x)
+
+# Utworzenie wykresu
+plt.plot(x, y, label='f(x) = (x^2 + 3x)/5 + sin(x)')
+plt.plot(x, z, label='cos(x)')
+
+# Dodanie etykiet do osi wykresu
+plt.xlabel('x')
+plt.ylabel('f(x)')
+ 
+# Ustawienie zakresu osi x na granice przedziału
+plt.xlim([-3, 5])
+
+# Dodanie legendy
+plt.legend()
+
+# Dodanie tytułu wykresu
+plt.title('Wykres funkcji f(x) = (x^2 + 3x)/5 + sin(x) oraz cos(x)')
+
+# Wyświetlenie wykresu
+plt.show()
+
+
+
+
+# Wczytanie pliku 'glass.data' do ramki danych
+df = pd.read_csv('glass.data', header=None)
+# Utworzenie nowej ramki danych dla typów szkła 6 i 7
+new_df = df[df[0].isin([6, 7])]
+# Grupowanie po kolumnie 'Type of glass'
+grouped_df = new_df.groupby(0)
+# Obliczenie procentowego udziału każdego typu szkła
+glass_counts = grouped_df.size()
+glass_percentages = glass_counts / glass_counts.sum() * 100
+
+# Utworzenie wykresu kołowego
+glass_percentages.plot(kind='pie', autopct='%1.1f%%')
+
+# Dodanie tytułu wykresu
+plt.title('Procentowy udział typów szkła')
+
+# Wyświetlenie wykresu
+plt.show()
